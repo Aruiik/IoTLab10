@@ -23,7 +23,7 @@ class UserController implements Controller {
        this.router.post(`${this.path}/create`, this.createNewOrUpdate);
        this.router.post(`${this.path}/auth`, this.authenticate);
        this.router.delete(`${this.path}/logout/:userId`, auth, this.removeHashSession);
-       this.router.post(`${this.path}/reset-password`, this.resetPassword); // <-- Dodaj ten endpoint
+       this.router.post(`${this.path}/reset-password`, this.resetPassword);
        this.router.get(`${this.path}/all`, auth, authorizeRoles('admin'), this.getAllUsers);
        this.router.get(`${this.path}/tokens-life`, auth, authorizeRoles('admin'), this.getTokensLife);
    }
